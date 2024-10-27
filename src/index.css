@@ -1,0 +1,98 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  /* margin: 0;
+  padding: 0;
+  box-sizing: border-box; */
+  font-family: "Inter", sans-serif;
+}
+
+body{
+  background-color: #FDF8EE;
+  min-height: 100%;
+  min-width: 100%;
+  overflow-x: hidden;
+  color: black;
+}
+
+.sideBar {
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    padding: 100px 50px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    backdrop-filter: blur(32px);
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    z-index: 9999;
+  }
+  .fade-out {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  .btn{
+    border: 2px solid black;
+  }
+  .courses {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    gap: 16px; 
+    max-width: 800px; 
+    margin: 0 auto; 
+  }
+  input{
+    background-color: white;
+    border-radius: 4px;
+    border: none;
+    padding: 4px;
+    width: 80%;
+  }
+  input::placeholder{
+    color: #959595;
+  }
+  
+ @media(min-width:1024px) {
+  .course{
+    width: 400px;
+  }
+ }
+
+  @media(max-width:850px) {
+    .course{
+       width: 300px;
+      margin: auto;
+    }
+  }
+  @media(max-width:768px) {
+    .courses{
+      grid-template-columns: repeat(1, 1fr);
+    }
+    .course{
+      width: 80%;
+      margin: auto;
+    }
+  }
+
+
+  @media(max-width:500px) {
+    #home, #contact{
+      width: 100%;
+      margin: auto;
+      flex-direction: column-reverse;
+    }
+    #home img, #about img, #contact img{
+      width: 300px;
+    }
+    
+
+    
+  }
